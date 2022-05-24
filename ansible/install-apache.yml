@@ -1,0 +1,5 @@
+---
+ - hosts: webserver1
+   become: yes
+   roles:
+     - my_web_server

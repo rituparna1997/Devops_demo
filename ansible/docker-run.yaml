@@ -1,0 +1,13 @@
+---
+ - hosts: webserver1
+   become: true
+
+   tasks:
+     - name: stoping existing container
+       shell: docker stop mywebcrash2
+       ignore_errors: yes
+     - name: removing the container
+       shell: docker rm mywebcrash2
+       ignore_errors: yes
+     - name: Creating Docker container
+       shell: docker run -d -p 8080:8080 --name mywebcrash2 rituparna1997/mywebcrash2 catalina.sh run

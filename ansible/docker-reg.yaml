@@ -1,0 +1,8 @@
+---
+ - hosts: webserver1
+   become: true
+   tasks:
+     - name: docker login
+       shell: docker login
+     - name: push docker image
+       shell: docker push rituparna1997/mywebcrash2

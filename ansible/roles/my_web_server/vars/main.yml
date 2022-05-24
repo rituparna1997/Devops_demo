@@ -1,0 +1,3 @@
+---
+ dest_path: "/var/www/html"
+# vars file for my_web_server

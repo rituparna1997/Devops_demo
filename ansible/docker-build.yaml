@@ -1,0 +1,10 @@
+---
+ - hosts: webserver1
+   become: true
+   tasks:
+     - name: remove existing project repo
+       shell: rm -rf maven-project
+     - name: pull the project repo
+       shell: git clone https://github.com/rituparna1997/maven-project.git
+     - name: build the docker file
+       shell: docker build -t rituparna1997/mywebcrash2 ./maven-project

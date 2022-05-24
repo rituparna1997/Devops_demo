@@ -1,0 +1,7 @@
+---
+- name: restart and enable apache
+  become: true
+  service:
+    name: apache2
+    state: restarted
+    enabled: yes

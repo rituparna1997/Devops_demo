@@ -1,0 +1,7 @@
+---
+- name: instance start ec2 instance
+  ec2:
+    instance_ids: '{{ instance_id }}'
+    region: us-east-1
+    state: '{{ instance_state }}'
+    wait: yes
