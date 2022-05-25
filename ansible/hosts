@@ -1,2 +1,4 @@
 [webserver1]
 172.31.18.254 ansible_ssh_user=ubuntu  ansible_ssh_private_key_file=/var/practice_roles/lamp.pem
+[lampstack]
+172.31.29.113 ansible_ssh_user=ubuntu  ansible_ssh_private_key_file=/var/practice_roles/lamp.pem
