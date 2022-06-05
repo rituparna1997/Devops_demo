@@ -1,0 +1,5 @@
+---
+- name: upload files to s3
+  s3_sync:
+    bucket: petshop-rituparna
+    file_root: /var/jenkins-backup

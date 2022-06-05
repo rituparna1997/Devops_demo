@@ -1,0 +1,53 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1180.v04c4e75dce43">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2077.vc78ec45162f1"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2077.vc78ec45162f1">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>instance_state</name>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>running</string>
+              <string>stopped</string>
+              <string>absent</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>instance_id</name>
+          <defaultValue>i-0622a96a6081bbf94</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2689.v434009a_31b_f1">
+    <script>pipeline {
+    agent any
+
+    stages {
+        stage(&apos;state&apos;) {
+            steps {
+                sh &apos;cd /var/Devops_demo/ansible&apos;
+                sh &apos;sudo ansible-playbook /var/Devops_demo/ansible/instance_state.yml -e &quot;instance_state=$instance_state&quot; -e &quot;instance_id=$instance_id&quot; &apos;    
+                
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
