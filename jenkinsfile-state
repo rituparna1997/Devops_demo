@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('state') {
+            steps {
+                sh 'cd /var/Devops_demo/ansible'
+                sh 'sudo ansible-playbook /var/Devops_demo/ansible/instance_state.yml -e "instance_state=$instance_state" -e "instance_id=$instance_id" '    
+                
+            }
+        }
+    }
+}

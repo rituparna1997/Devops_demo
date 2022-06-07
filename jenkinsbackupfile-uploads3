@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'cd /var/Devops_demo/ansible'
+                sh 'ansible-playbook /var/Devops_demo/ansible/s3-put.yml '    
+                
+            }
+        }
+    }
+}

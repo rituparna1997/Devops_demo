@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('create') {
+            steps {
+                sh 'cd /var/Devops_demo/ansible'
+                sh 'sudo ansible-playbook /var/Devops_demo/ansible/iam.yml -e "username=[$user_names]" '    
+                
+            }
+        }
+    }
+}
