@@ -2,4 +2,4 @@
 - name: upload files to s3
   s3_sync:
     bucket: petshop-rituparna
-    file_root: /var/jenkins-backup
+    file_root: /var/Devops_demo/jenkins-backup
