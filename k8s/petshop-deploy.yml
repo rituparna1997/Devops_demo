@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petshop-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-petshop
+  template:
+    metadata:
+      labels:
+        app: my-petshop
+    spec:
+      containers:
+      - name: petshop
+        image: rituparna1997/petshop
+        ports:
+        - containerPort: 80
