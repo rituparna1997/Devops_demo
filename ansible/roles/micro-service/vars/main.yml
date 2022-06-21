@@ -1,0 +1,9 @@
+---
+ deploymentName: "petshop"
+ numberOfReplicas: "2"
+ appLevel: "petshop"
+ containerName: "petshop-apache"
+ image: "rituparna1997/petshop"
+ serviceName: "petshop-sevice"
+ nodePort: "30022"
+

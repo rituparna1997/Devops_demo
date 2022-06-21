@@ -1,0 +1,6 @@
+---
+  - name: copy files to remote node
+    template: src=templates/micro-service.yaml dest=$HOME
+
+  - name: apply micro-service manifest to the cluster
+    shell: kubectl apply -f $HOME/micro-service.yaml
